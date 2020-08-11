@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+    <!-- Include Editor style. -->
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function getValue() {
+            //alert(document.getElementById('froala-editor').innerHTML);
+            //alert(editor.html.get());
+            cefCustomObject.sayHello(editor.html.get());
+        }
+    </script>
+</head>
+<body>
+    <!-- Create a tag that we will use as the editable area. -->
+    <!-- You can use a div tag as well. -->
+    <div id="froala-editor"></div>
+    <button type="button" onclick="getValue()">Click Me!</button>
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+    <!-- Initialize the editor. -->
+    <script>
+        var editor = new FroalaEditor('div#froala-editor');
+    </script>
+</body>
+</html>
