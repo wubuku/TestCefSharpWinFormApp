@@ -6,20 +6,41 @@
         function getValue() {
             //alert(document.getElementById('froala-editor').innerHTML);
             //alert(editor.html.get());
-            cefCustomObject.sayHello(editor.html.get());
+            //cefCustomObject.sayHello(editor.html.get());
+            cefCustomObject.sayHello($('textarea').froalaEditor('html.get'));
         }
     </script>
 </head>
 <body>
+    <!-- Include CSS for icons. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Create a tag that we will use as the editable area. -->
     <!-- You can use a div tag as well. -->
-    <div id="froala-editor"></div>
-    <button type="button" onclick="getValue()">Click Me!</button>
+    <textarea></textarea>
+    <button onclick="getValue()">Click Me!</button>
+
+    <!-- Include jQuery lib. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
     <!-- Include Editor JS files. -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
-    <!-- Initialize the editor. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@2.5.1/js/languages/zh_cn.js"></script>    
+     <!-- Initialize the editor. -->
     <script>
-        var editor = new FroalaEditor('div#froala-editor');
+        //var editor = new FroalaEditor('div#froala-editor');
+        $(function () {
+            $('textarea').froalaEditor({
+                // Set the language code.
+                language: 'zh_cn'
+            })
+        });
+        
     </script>
 </body>
 </html>
