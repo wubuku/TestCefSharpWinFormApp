@@ -26,7 +26,7 @@
     <!-- Create a tag that we will use as the editable area. -->
     <!-- You can use a div tag as well. -->
     <textarea></textarea>
-    <button onclick="getValue()">Click Me!</button>
+    <!--<button onclick="getValue()">Click Me!</button>-->
 
     <!-- Include jQuery lib. -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -41,7 +41,8 @@
         $(function () {
             $('textarea').froalaEditor({
                 // Set the language code.
-                language: 'zh_cn'
+                language: 'zh_cn',
+                height: 'calc(100vh - 100px)'
             })
         });
         
