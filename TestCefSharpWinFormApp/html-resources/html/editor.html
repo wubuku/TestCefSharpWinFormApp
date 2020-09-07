@@ -1,12 +1,16 @@
 ﻿<html>
 <head>
     <!-- Include Editor style. -->
-    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <!--<link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />-->
     <script type="text/javascript">
         function getValue() {
             //alert(document.getElementById('froala-editor').innerHTML);
             //alert(editor.html.get());
             //cefCustomObject.sayHello(editor.html.get());
+
+            // 设置编辑的内容：
+            //$('textarea').froalaEditor('html.set', '<p>My custom paragraph.</p>')
+
             cefCustomObject.sayHello($('textarea').froalaEditor('html.get'));
         }
     </script>
