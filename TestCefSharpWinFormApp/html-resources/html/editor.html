@@ -7,11 +7,12 @@
             //alert(document.getElementById('froala-editor').innerHTML);
             //alert(editor.html.get());
             //cefCustomObject.sayHello(editor.html.get());
-
             // 设置编辑的内容：
-            //$('textarea').froalaEditor('html.set', '<p>My custom paragraph.</p>')
-
-            cefCustomObject.sayHello($('textarea').froalaEditor('html.get'));
+            //$('#editor').froalaEditor('html.set', '<p>My custom paragraph.</p>')
+            cefCustomObject.sayHello($('#editor').froalaEditor('html.get'));
+        }
+        function setValue() {
+            $('#editor').froalaEditor('html.set', 'Initialize the Froala <strong>WYSIWYG</strong> HTML Editor on a textarea.');
         }
     </script>
 </head>
@@ -25,7 +26,8 @@
 
     <!-- Create a tag that we will use as the editable area. -->
     <!-- You can use a div tag as well. -->
-    <textarea></textarea>
+    <!--<textarea></textarea>-->
+    <div id="editor"></div>
     <!--<button onclick="getValue()">Click Me!</button>-->
 
     <!-- Include jQuery lib. -->
@@ -37,19 +39,25 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@2.5.1/js/languages/zh_cn.js"></script>    
      <!-- Initialize the editor. -->
     <script>
+
+        ////获取 url 中的查询参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const content = urlParams.get('content');
+        //alert(myParam);
+        $('#editor').html(content);//'My custom <strong>para</strong>graph.');
+
         //var editor = new FroalaEditor('div#froala-editor');
         $(function () {
-            $('textarea').froalaEditor({
+            $('#editor').froalaEditor({
                 // Set the language code.
                 language: 'zh_cn',
                 height: 'calc(100vh - 100px)'
-            })
+            }
+            );
+            //$('#editor').on('froalaEditor.initialized', function (e, editor) {
+            //    $('#editor').froalaEditor('html.set', 'My custom <strong>para</strong>graph.');
+            //});
         });
-
-        ////获取 url 中的查询参数
-        //const urlParams = new URLSearchParams(window.location.search);
-        //const myParam = urlParams.get('myParam');
-        //alert(myParam);
 
     </script>
 </body>
